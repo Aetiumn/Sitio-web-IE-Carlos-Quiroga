@@ -1,3 +1,7 @@
+/* =========================
+   ESTILOS BASE
+   ========================= */
+
 /* Estilos generales */
 body {
   margin: 0;
@@ -76,6 +80,7 @@ nav a:hover {
 /* Contenido oculto */
 .contenido-oculto {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
   background-color: #1e1e1e;
   margin: 0;
@@ -84,11 +89,12 @@ nav a:hover {
   border-radius: 5px;
   font-size: 14px;
   color: #ccc;
-  transition: max-height 0.5s ease, padding 0.3s ease;
+  transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.3s ease;
 }
 
 .contenido-oculto.activo {
   max-height: 500px;
+  opacity: 1;
   padding: 10px;
   margin-bottom: 15px;
 }
@@ -122,6 +128,11 @@ main {
 
 .btn-proyectos:hover {
   transform: scale(1.1);
+}
+
+.btn-proyectos.activo-btn {
+  background: linear-gradient(90deg, #5a2d82, #8a4dcc);
+  box-shadow: 0 0 20px #5a2d82;
 }
 
 /* Grid 2x2 de rectángulos */
@@ -184,6 +195,7 @@ main {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.6), 0 0 20px #5a2d82, 0 0 40px #5a2d82;
 }
+
 /* banner inferior */
 footer {
   background-color: #1e1e1e;
@@ -202,16 +214,15 @@ footer h2 {
 /* Logo centrado debajo del h2 */
 .footer-logo {
   display: block;
-  margin: 0 auto 15px auto; /* centrado horizontal y margen inferior */
-  width: 30px;               /* tamaño del logo */
+  margin: 0 auto 15px auto;
+  width: 30px;
   height: auto;
   transition: transform 0.3s ease;
 }
 
-/* Pulso suave al pasar el cursor */
 @keyframes pulso {
   0% { transform: scale(1); }
-  50% { transform: scale(1.08); } /* suave */
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
@@ -219,7 +230,6 @@ footer h2 {
   animation: pulso 2s infinite ease-in-out;
 }
 
-/* Texto de derechos centrado */
 footer p {
   margin-top: 0;
   font-size: 14px;
@@ -230,7 +240,7 @@ footer p {
    RESPONSIVE DESIGN
    ========================= */
 
-/* Tablets (pantallas medianas) */
+/* Tablets */
 @media (max-width: 1024px) {
   nav {
     width: 200px;
@@ -249,12 +259,10 @@ footer p {
 
 /* Móviles */
 @media (max-width: 768px) {
-  /* Layout en columna */
   .container {
     flex-direction: column;
   }
 
-  /* Menú superior en vez de lateral */
   nav {
     width: 100%;
     border-right: none;
@@ -270,7 +278,6 @@ footer p {
     max-width: 300px;
   }
 
-  /* Sección principal más compacta */
   main {
     padding: 20px;
   }
@@ -280,7 +287,6 @@ footer p {
     font-size: 24px;
   }
 
-  /* Grid pasa a 1 columna */
   .grid-circulos {
     grid-template-columns: 1fr;
     width: 100%;
@@ -289,10 +295,9 @@ footer p {
   }
 
   .circulo {
-    padding-top: 100%; /* más cuadrado en móvil */
+    padding-top: 100%;
   }
 
-  /* Textos más legibles */
   .contenido-oculto p {
     font-size: 15px;
     line-height: 1.6;
@@ -307,7 +312,7 @@ footer p {
   }
 }
 
-/* Muy pequeños (teléfonos < 480px) */
+/* Teléfonos pequeños */
 @media (max-width: 480px) {
   header h1 {
     font-size: 26px;
@@ -323,6 +328,7 @@ footer p {
     padding: 10px;
   }
 }
+
 
 
 
