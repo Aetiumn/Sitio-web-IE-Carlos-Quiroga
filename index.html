@@ -14,10 +14,23 @@
   <!-- p5.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
+
+<script>
+  // Botón hamburguesa
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector("nav");
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("activo");
+  });
+</script>
+
 <body>
   <!-- Banner superior -->
   <header>
     <h1>Portafolio IE 2025</h1>
+     <!-- Botón hamburguesa -->
+  <button class="hamburger" id="hamburger">☰</button>
   </header>
 
   <!-- Menú general -->
