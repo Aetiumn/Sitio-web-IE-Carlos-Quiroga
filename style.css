@@ -226,6 +226,105 @@ footer p {
   color: #aaa;
 }
 
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  nav {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .btn-proyectos {
+    padding: 40px 80px;
+    font-size: 28px;
+  }
+
+  .grid-circulos {
+    gap: 15px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  /* Layout en columna */
+  .container {
+    flex-direction: column;
+  }
+
+  /* Menú superior en vez de lateral */
+  nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  nav a {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Sección principal más compacta */
+  main {
+    padding: 20px;
+  }
+
+  .btn-proyectos {
+    padding: 30px 60px;
+    font-size: 24px;
+  }
+
+  /* Grid pasa a 1 columna */
+  .grid-circulos {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+  }
+
+  .circulo {
+    padding-top: 100%; /* más cuadrado en móvil */
+  }
+
+  /* Textos más legibles */
+  .contenido-oculto p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+
+  .footer-logo {
+    width: 25px;
+  }
+}
+
+/* Muy pequeños (teléfonos < 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  .btn-proyectos {
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
 
 
 
