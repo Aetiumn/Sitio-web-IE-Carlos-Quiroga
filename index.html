@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio IE 2025</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Londrina+Shadow:wght@400;700&family=Monoton&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+  <!-- Banner superior -->
+  <header>
+    <h1>Portafolio IE 2025</h1>
+  </header>
+
+  <!-- Menú general -->
+  <div class="container">
+    <!-- Menú lateral -->
+    <nav>
+      <a href="#" id="btn-curso">Sobre el curso</a>
+      <div class="contenido-oculto" id="texto-curso">
+        <p>Imagen escrita - El dibujo a tráves del código -</p>
+          <p>La mezcla entre el diseño, la programación y el arte generativo,
+          utilizando p5.js como herramienta principal.
+        </p>
+      </div>
+
+      <a href="#" id="btn-mi">Sobre mí</a>
+      <div class="contenido-oculto" id="texto-mi">
+        <p>Carlos alias Shin</p>
+          <p>Estudiante de diseño</p>
+        <p>No hay redes sociales</p>
+      </div>
+
+      <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Carlos_Quiroga" id="btn-wiki" target="_blank">Wiki del proyecto</a>
+
+    </nav>
+
+    <!-- Sección principal -->
+    <main>
+      <div class="btn-container">
+        <a href="#" id="btn-proyectos" class="btn-proyectos">Encargos</a>
+      </div>
+      <div class="grid-circulos" id="grid-proyectos"></div>
+    </main>
+  </div>
+
+  <!-- Animación p5.js -->
+  <script src="relampagos.js"></script>
+
+  <!-- JS funcionalidad botones -->
+  <script>
+    // Toggle de textos ocultos
+    function toggleContenido(id) {
+      const elem = document.getElementById(id);
+      elem.classList.toggle("activo");
+    }
+
+    document.getElementById("btn-curso").addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleContenido("texto-curso");
+    });
+
+    document.getElementById("btn-mi").addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleContenido("texto-mi");
+    });
+
+    // Botón Proyectos → despliegue 2x2
+    document.getElementById("btn-proyectos").addEventListener("click", (e) => {
+      e.preventDefault();
+      const grid = document.getElementById("grid-proyectos");
+      const btn = document.getElementById("btn-proyectos");
+
+      if (!grid.hasChildNodes()) {
+        const imagenes = [
+          "assets/Tarea 1.png",
+          "assets/Tarea 2.png",
+          "assets/Tarea 3.png",
+          "assets/Tarea 4.png"
+        ];
+
+        const enlaces = [
+          "https://editor.p5js.org/aetiumn/sketches/n7f73v8Ox",
+          "https://editor.p5js.org/aetiumn/sketches/7i22tYRFT",
+          "https://editor.p5js.org/aetiumn/sketches/II_78QOsr",
+          "https://editor.p5js.org/aetiumn/sketches/V8YlRC8tC"
+        ];
+
+        for (let i = 0; i < 4; i++) {
+          const link = document.createElement("a");
+          link.classList.add("circulo");
+          link.href = enlaces[i];
+          link.target = "_blank";
+
+          // Imagen dentro del rectángulo
+          const img = document.createElement("img");
+          img.src = imagenes[i];
+          img.alt = `Imagen P${i+1}`;
+          link.appendChild(img);
+
+          // Texto
+          const label = document.createElement("p");
+          label.textContent = `Encargo ${i+1}`;
+          link.appendChild(label);
+
+          grid.appendChild(link);
+        }
+      }
+
+      const activo = grid.classList.toggle("activo");
+      btn.classList.toggle("activo-btn", activo);
+    });
+  </script>
+  <!-- Banner inferior -->
+<footer>
+  <img src="assets/darkm.png" alt="Logo personal" class="footer-logo">
+  <p>© AETIUMN</p>
+</footer>
+
+
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
