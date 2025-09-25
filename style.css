@@ -237,97 +237,103 @@ footer p {
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   RESPONSIVE FORZADO
    ========================= */
 
-/* Tablets */
+/* Tablets (pantallas medianas) */
 @media (max-width: 1024px) {
   nav {
-    width: 200px;
-    padding: 15px;
+    width: 200px !important;
+    padding: 15px !important;
   }
 
   .btn-proyectos {
-    padding: 40px 80px;
-    font-size: 28px;
+    padding: 40px 80px !important;
+    font-size: 28px !important;
   }
 
   .grid-circulos {
-    gap: 15px;
+    gap: 15px !important;
   }
 }
 
 /* Móviles */
 @media (max-width: 768px) {
+  /* Layout en columna */
   .container {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
+  /* Menú superior en vez de lateral */
   nav {
-    width: 100%;
-    border-right: none;
-    border-bottom: 2px solid #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 2px solid #333 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 15px !important;
   }
 
   nav a {
-    width: 100%;
-    max-width: 300px;
+    width: 100% !important;
+    max-width: 300px !important;
   }
 
+  /* Sección principal más compacta */
   main {
-    padding: 20px;
+    padding: 20px !important;
   }
 
   .btn-proyectos {
-    padding: 30px 60px;
-    font-size: 24px;
+    padding: 30px 60px !important;
+    font-size: 24px !important;
   }
 
+  /* Grid pasa a 1 columna */
   .grid-circulos {
-    grid-template-columns: 1fr;
-    width: 100%;
-    max-width: 350px;
-    margin: 20px auto;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 20px auto !important;
   }
 
   .circulo {
-    padding-top: 100%;
+    padding-top: 100% !important; /* más cuadrado en móvil */
   }
 
+  /* Textos más legibles */
   .contenido-oculto p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
   }
 
   footer {
-    padding: 20px 10px;
+    padding: 20px 10px !important;
   }
 
   .footer-logo {
-    width: 25px;
+    width: 25px !important;
   }
 }
 
-/* Teléfonos pequeños */
+/* Muy pequeños (teléfonos < 480px) */
 @media (max-width: 480px) {
   header h1 {
-    font-size: 26px;
+    font-size: 26px !important;
   }
 
   .btn-proyectos {
-    padding: 20px 40px;
-    font-size: 20px;
+    padding: 20px 40px !important;
+    font-size: 20px !important;
   }
 
   nav a {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 14px !important;
+    padding: 10px !important;
   }
 }
+
 
 
 
