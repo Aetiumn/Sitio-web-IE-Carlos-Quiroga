@@ -15,16 +15,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
 
-<script>
-  // Botón hamburguesa
- const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("main-nav");
 
-hamburger.addEventListener("click", () => {
-  nav.classList.toggle("activo");
-});
-
-</script>
 
 <body>
   <!-- Banner superior -->
@@ -39,7 +30,7 @@ hamburger.addEventListener("click", () => {
      
   <button class="hamburger" id="hamburger">☰</button>
 
-    <nav>
+    <nav id="main-nav">
       <a href="#" id="btn-curso">Sobre el curso</a>
       <div class="contenido-oculto" id="texto-curso">
         <p>Imagen escrita - El dibujo a tráves del código -</p>
@@ -56,7 +47,8 @@ hamburger.addEventListener("click", () => {
       </div>
 
       <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Carlos_Quiroga" id="btn-wiki" target="_blank">Wiki del proyecto</a>
-
+        
+       
     </nav>
 
     <!-- Sección principal -->
@@ -73,6 +65,15 @@ hamburger.addEventListener("click", () => {
 
   <!-- JS funcionalidad botones -->
   <script>
+    
+  // Botón hamburguesa
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("main-nav");
+
+    hamburger.addEventListener("click", () => { 
+      nav.classList.toggle("activo");
+    });
+
     // Toggle de textos ocultos
     function toggleContenido(id) {
       const elem = document.getElementById(id);
@@ -146,8 +147,7 @@ hamburger.addEventListener("click", () => {
 </body>
 </html>
 
-</body>
-</html>
+
 
 
 

@@ -390,39 +390,6 @@ footer p {
   }
 }
 
-/* Botón hamburguesa */
-.hamburger {
-  display: block;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #fff;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-/* Menú lateral oculto */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;       /* ancho del menú */
-  height: 100%;       /* todo el alto de la pantalla */
-  background-color: #181818;
-  transform: translateX(-100%); /* oculto a la izquierda */
-  transition: transform 0.3s ease; /* animación de deslizamiento */
-  flex-direction: column;
-  z-index: 1000;
-  padding-top: 80px;  /* para que no tape el header */
-}
-
-/* Menú visible al pulsar hamburguesa */
-nav.activo {
-  transform: translateX(0); /* se desliza a su posición */
-}
 
 
 
