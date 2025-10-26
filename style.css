@@ -138,15 +138,18 @@ main {
 /* Grid 2x2 de rectángulos */
 .grid-circulos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 🔹 más flexible */
   gap: 20px;
   justify-content: center;
   width: 100%;
+  max-width: 900px; /* 🔹 limita el ancho total */
+  margin: 0 auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
   margin-top: 20px;
 }
+
 
 .grid-circulos.activo {
   opacity: 1;

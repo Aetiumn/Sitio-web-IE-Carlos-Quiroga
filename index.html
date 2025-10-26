@@ -47,7 +47,8 @@
       </div>
 
       <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_-_Carlos_Quiroga" id="btn-wiki" target="_blank">Wiki del proyecto</a>
-        
+       <a href="https://wiki.ead.pucv.cl/M%C3%ADstica_Espiral_-_Exposici%C3%B3n_IE_2025" id="btn-github" target="_blank">Proyecto final</a>
+ 
        
     </nav>
 
@@ -90,51 +91,52 @@
       toggleContenido("texto-mi");
     });
 
-    // Botón Proyectos → despliegue 2x2
-    document.getElementById("btn-proyectos").addEventListener("click", (e) => {
-      e.preventDefault();
-      const grid = document.getElementById("grid-proyectos");
-      const btn = document.getElementById("btn-proyectos");
+    // Botón Proyectos → despliegue 2x2 (ahora con 5 encargos)
+document.getElementById("btn-proyectos").addEventListener("click", (e) => {
+  e.preventDefault();
+  const grid = document.getElementById("grid-proyectos");
+  const btn = document.getElementById("btn-proyectos");
 
-      if (!grid.hasChildNodes()) {
-        const imagenes = [
-          "assets/Tarea 1.png",
-          "assets/Tarea 2.png",
-          "assets/Tarea 3.png",
-          "assets/Tarea 4.png"
-        ];
+  if (!grid.hasChildNodes()) {
+    const imagenes = [
+      "assets/Tarea 1.png",
+      "assets/Tarea 2.png",
+      "assets/Tarea 3.png",
+      "assets/Tarea 4.png",
+      "assets/Tarea 5.png" 
+    ];
 
-        const enlaces = [
-          "https://editor.p5js.org/aetiumn/sketches/n7f73v8Ox",
-          "https://editor.p5js.org/aetiumn/sketches/7i22tYRFT",
-          "https://editor.p5js.org/aetiumn/sketches/II_78QOsr",
-          "https://editor.p5js.org/aetiumn/sketches/V8YlRC8tC"
-        ];
+    const enlaces = [
+      "https://editor.p5js.org/aetiumn/sketches/n7f73v8Ox",
+      "https://editor.p5js.org/aetiumn/sketches/7i22tYRFT",
+      "https://editor.p5js.org/aetiumn/sketches/II_78QOsr",
+      "https://editor.p5js.org/aetiumn/sketches/V8YlRC8tC",
+      "https://editor.p5js.org/aetiumn/sketches/ipRrIke94" 
+    ];
 
-        for (let i = 0; i < 4; i++) {
-          const link = document.createElement("a");
-          link.classList.add("circulo");
-          link.href = enlaces[i];
-          link.target = "_blank";
+    for (let i = 0; i < imagenes.length; i++) {
+      const link = document.createElement("a");
+      link.classList.add("circulo");
+      link.href = enlaces[i];
+      link.target = "_blank";
 
-          // Imagen dentro del rectángulo
-          const img = document.createElement("img");
-          img.src = imagenes[i];
-          img.alt = `Imagen P${i+1}`;
-          link.appendChild(img);
+      const img = document.createElement("img");
+      img.src = imagenes[i];
+      img.alt = `Imagen P${i + 1}`;
+      link.appendChild(img);
 
-          // Texto
-          const label = document.createElement("p");
-          label.textContent = `Encargo ${i+1}`;
-          link.appendChild(label);
+      const label = document.createElement("p");
+      label.textContent = `Encargo ${i + 1}`;
+      link.appendChild(label);
 
-          grid.appendChild(link);
-        }
-      }
+      grid.appendChild(link);
+    }
+  }
 
-      const activo = grid.classList.toggle("activo");
-      btn.classList.toggle("activo-btn", activo);
-    });
+  const activo = grid.classList.toggle("activo");
+  btn.classList.toggle("activo-btn", activo);
+});
+
   </script>
   <!-- Banner inferior -->
 <footer>
